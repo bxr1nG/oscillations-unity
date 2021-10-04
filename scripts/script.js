@@ -7,28 +7,27 @@ const slidesCount = document.querySelectorAll('.slider__img-item').length
 let activeSlideIndex = 0
 
 upBtn.addEventListener('click', () => {
-    changeSlide('up')
-    
+	changeSlide('up')
 })
 
 downBtn.addEventListener('click', () => {
-    changeSlide('down')
+	changeSlide('down')
 })
 
 function changeSlide(direction) {
-    if (direction === 'up') {
-        activeSlideIndex--
-        if (activeSlideIndex < 0) {
-            activeSlideIndex = slidesCount - 1
-        }
-    } else if (direction === 'down') {
-        activeSlideIndex++
-        if (activeSlideIndex === slidesCount) {
-            activeSlideIndex = 0
-        }
-    }
+	if (direction === 'up') {
+		activeSlideIndex--
+		if (activeSlideIndex < 0) {
+			activeSlideIndex = slidesCount - 1
+		}
+	} else if (direction === 'down') {
+		activeSlideIndex++
+		if (activeSlideIndex === slidesCount) {
+			activeSlideIndex = 0
+		}
+	}
 
-    const height = document.querySelector('body').clientHeight * 0.9
+	const height = 500 //document.querySelector('body').clientHeight * 0.9
 
-    mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
+	mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
 }
