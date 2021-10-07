@@ -27,7 +27,7 @@ function changeSlide(direction) {
 		}
 	}
 
-	const height = 500 //document.querySelector('body').clientHeight * 0.9
+	const height = 600 //document.querySelector('body').clientHeight * 0.9
 
 	mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
 }
