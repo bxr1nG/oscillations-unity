@@ -1,46 +1,137 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles/structure/style.css">
-	<link rel="icon" href="images/logo.png">
-    <title>Структура установки</title>
-</head>
-<body>
-
-    <div class="wrapper">
-		<header class="header">
-			<div class="container">
-				<div class="header__row">
-					<div class="header__logo">
-						<a class="header__logo-link" href="index.html">
-							<img class="header__logo-img" src="images/logo.png" alt="Логотип">
-						</a>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/structure/style.css" />
+		<link rel="icon" href="images/logo.png" />
+		<title>Структура установки</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container">
+					<div class="header__row">
+						<div class="header__logo">
+							<a class="header__logo-link" href="index.html">
+								<img
+									class="header__logo-img"
+									src="images/logo.png"
+									alt="Логотип"
+								/>
+							</a>
+						</div>
+						<nav class="header__nav">
+							<input id="header__toggle" type="checkbox" />
+							<label class="header__btn" for="header__toggle">
+								<span></span>
+							</label>
+							<ul class="header__menu">
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="theory.html">Теория</a>
+								</li>
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="structure.html"
+										>Структура</a
+									>
+								</li>
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="simulator.html"
+										>Симулятор</a
+									>
+								</li>
+							</ul>
+						</nav>
 					</div>
-					<nav class="header__nav">
-						<input id="header__toggle" type="checkbox" />
-    					<label class="header__btn" for="header__toggle">
-      						<span></span>
-    					</label>
-						<ul class="header__menu">
-							<li class="header__menu-item">
-								<a class="header__menu-link" href="theory.html">Теория</a>
-							</li>
-							<li class="header__menu-item">
-								<a class="header__menu-link" href="structure.html">Структура</a>
-							</li>
-							<li class="header__menu-item">
-								<a class="header__menu-link" href="simulator.html">Симулятор</a>
-							</li>
-						</ul>
-					</nav>
 				</div>
-			</div>
-		</header>
-		
-    </div>
-    
-</body>
+			</header>
+
+			<section class="slider">
+				<div class="slider__container">
+					<div
+						class="slider__img-item"
+						style="background-image: url('images/slider/slider-1.jpg')"
+					></div>
+					<div
+						class="slider__img-item active"
+						style="background-image: url('images/slider/slider-2.jpg')"
+					></div>
+					<div
+						class="slider__img-item"
+						style="background-image: url('images/slider/slider-3.jpg')"
+					></div>
+					<div
+						class="slider__img-item"
+						style="background-image: url('images/slider/slider-4.jpg')"
+					></div>
+					<div
+						class="slider__img-item"
+						style="background-image: url('images/slider/slider-5.jpg')"
+					></div>
+					<div
+						class="slider__img-item"
+						style="background-image: url('images/slider/slider-6.jpg')"
+					></div>
+				</div>
+			</section>
+			<section class="installation">
+				<div class="container">
+					<div class="installation__inner">
+						<h1 class="installation__title">
+							Описание установки и метода измерений
+						</h1>
+						<p class="installation__text">
+							Схема установки для изучения затухающих электромагнитных колебаний
+							приведена на рисунке:
+						</p>
+						<img
+							class="installation__image"
+							src="images/scheme.png"
+							alt="Схема установки"
+							title="Схема установки"
+						/>
+						<p class="installation__text">
+							Колебательный контур установки состоит из конденсатора <em>C</em>,
+							катушки индуктивности <em>L</em> и магазина сопротивлений
+							<em>R<sub>м</sub></em
+							>. Конденсатор заряжается под воздействием периодически
+							повторяющихся прямоугольных импульсов напряжения, которые
+							вырабатываются генератором. В промежутках между соседними
+							импульсами в контуре совершаются электромагнитные колебания.
+							Затухание колебаний определяется в основном потерями энергии в
+							сопротивлении обмотки катушки <em>R<sub>к</sub></em> и магазина
+							сопротивлений <em>R<sub>м</sub></em
+							>. Возбуждаемые в контуре колебания напряжения подаются на вход
+							<em>Y</em> электронного осциллографа. Генератор временнóй
+							развертки осциллографа синхронизируется переменным напряжением,
+							частота которого совпадает с частотой повторения импульсов
+							напряжения, подаваемого на конденсатор. На экране осциллографа
+							воспроизводится зависимость напряжения <em>U</em> на обкладках
+							конденсатора от времени <em>t</em> при затухающих электромагнитных
+							колебаниях в контуре, которые совершаются в промежутках времени
+							между импульсами напряжения, заряжающего конденсатор. Магазин
+							сопротивлений <em>R<sub>м</sub></em> предназначен для изменения
+							активного сопротивления <em>R</em> контура, которое представляет
+							собой сумму сопротивлений обмотки катушки <em>R<sub>к</sub></em> и
+							<em>R<sub>м</sub></em
+							>, выбранного на магазине сопротивлений (<em>R</em> =
+							<em>R<sub>к</sub></em> + <em>R<sub>м</sub></em
+							>).
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__row">
+						<div class="footer__text">Вощук Даниил 2021</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="scripts/structure.js"></script>
+	</body>
 </html>
