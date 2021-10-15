@@ -94,11 +94,42 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .header__logo-img {
   width: 40px;
   height: 40px;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+  opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.header__logo-img-back {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.header__logo-link:hover .header__logo-img-back {
+  opacity: 1;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+.header__logo-link:hover .header__logo-img {
+  opacity: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
 }
 
 .header__nav {
