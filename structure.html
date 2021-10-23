@@ -8,7 +8,7 @@
 		<link rel="icon" href="images/logo.png" />
 		<title>Структура установки</title>
 	</head>
-	<body>
+	<body onload="init();">
 		<div class="wrapper">
 			<header class="header">
 				<div class="container">
@@ -127,6 +127,17 @@
 					</div>
 				</div>
 			</section>
+			<section class="animate">
+				<div class="container">
+					<div class="animate__inner">
+						<h1 class="animate__title">Схема установки</h1>
+					</div>
+				</div>
+				<div class="animate__canvas-container" id="animation_container">
+					<canvas id="canvas"></canvas>
+					<div id="dom_overlay_container"></div>
+				</div>
+			</section>
 
 			<footer class="footer">
 				<div class="container">
@@ -138,5 +149,7 @@
 		</div>
 
 		<script src="scripts/structure.js"></script>
+		<script src="scripts/animate/createjs.min.js"></script>
+		<script src="scripts/animate/script.js"></script>
 	</body>
 </html>
