@@ -1,0 +1,128 @@
+.about {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: row;
+	margin: 50px 0;
+	justify-content: center;
+
+	@keyframes coinFlip {
+		0% {
+			transform: rotateY(0deg);
+		}
+		7% {
+			transform: rotateY(180deg);
+		}
+		50% {
+			transform: rotateY(180deg);
+		}
+		57% {
+			transform: rotateY(0deg);
+		}
+	}
+
+	&__flip-photo {
+		background-color: transparent;
+		width: 400px;
+		height: 400px;
+		perspective: 1000px;
+		margin-right: 50px;
+	}
+	&__flip-inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		text-align: center;
+		transform-style: preserve-3d;
+		animation-name: coinFlip;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+	}
+	&__flip-front,
+	&__flip-back {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		backface-visibility: hidden;
+	}
+	&__flip-front {
+		background-color: #fff;
+		color: #000;
+	}
+	&__flip-back {
+		background-color: $mainColor;
+		color: #fff;
+		transform: rotateY(180deg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__flip-img {
+		width: 400px;
+		height: 400px;
+	}
+	&__flip-text {
+		letter-spacing: 1px;
+		font-weight: 600;
+		margin: 5px;
+	}
+
+	&__info {
+		align-self: center;
+	}
+
+	&__title {
+		margin-bottom: 40px;
+		letter-spacing: 1px;
+		font-weight: 600;
+	}
+	&__text {
+		letter-spacing: 0.8px;
+	}
+	&__message + &__message {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 996px) {
+	.about {
+		&__flip-photo,
+		&__flip-img {
+			width: 280px;
+			height: 280px;
+		}
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.about {
+		&__flip-photo,
+		&__flip-img {
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.about {
+		flex-direction: column;
+		align-items: center;
+		&__flip-photo {
+			margin: 0;
+			margin-bottom: 30px;
+		}
+		&__info {
+			text-align: center;
+		}
+		&__title {
+			margin-bottom: 10px;
+		}
+	}
+}

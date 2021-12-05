@@ -1,0 +1,48 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+input {
+	font-size: 1.6rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+
+	border: none;
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+html,
+body {
+	height: 100%;
+}

@@ -1,0 +1,27 @@
+.installation {
+	display: flex;
+	flex-direction: column;
+	margin: 30px 0;
+	&__title {
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__text {
+		text-align: justify;
+		text-indent: 40px;
+	}
+	&__image {
+		align-self: center;
+		width: 600px;
+		max-width: 80%;
+		padding: 20px;
+		transition: all 0.2s;
+	}
+	&__image:hover {
+		transform: scale(1.2, 1.2);
+		background-color: #fff;
+		border-radius: 20px;
+		box-shadow: 0px 0px 20px rgb(207, 207, 207);
+	}
+}

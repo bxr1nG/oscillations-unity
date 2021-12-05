@@ -1,0 +1,82 @@
+.slider {
+	position: relative;
+	overflow: hidden;
+	height: 600px;
+	margin-top: 50px;
+
+	& .container {
+		position: relative;
+		height: 600px;
+	}
+
+	&__images {
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: transform 0.5s ease-in-out;
+	}
+	&__img-link {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		z-index: 199;
+	}
+	&__img-item {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: 100%;
+	}
+	&__title {
+		padding: 0 50px;
+		letter-spacing: 1px;
+		font-weight: 600;
+		color: white;
+		text-shadow: 0 0 3px black;
+	}
+
+	&__button {
+		background-color: transparent;
+		border: none;
+		color: white;
+		cursor: pointer;
+		font-size: 2rem;
+		padding: 15px;
+		transition: all 0.2s;
+	}
+
+	&__button:hover {
+		color: darken(white, 20%);
+	}
+
+	&__button:focus {
+		outline: none;
+	}
+
+	&__button {
+		position: absolute;
+		transform: translateY(-50%);
+		z-index: 100;
+	}
+
+	&__down-button {
+		left: 15px;
+		top: 50%;
+	}
+
+	&__up-button {
+		right: 15px;
+		top: 50%;
+	}
+}

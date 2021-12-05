@@ -1,0 +1,13 @@
+.footer {
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	background-color: $mainColor;
+	&__text {
+		text-transform: uppercase;
+		color: white;
+		font-size: 75%;
+		letter-spacing: 1px;
+	}
+}

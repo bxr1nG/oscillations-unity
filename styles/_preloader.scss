@@ -1,0 +1,137 @@
+.noscroll {
+	overflow: hidden;
+}
+
+.preloader {
+	background: #000;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 1001;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__hiding {
+		transition: 0.5s opacity;
+		opacity: 0;
+	}
+
+	&__none {
+		display: none;
+	}
+
+	&__sorry {
+		color: #303030;
+		position: absolute;
+		bottom: 20px;
+		margin: 0 auto;
+		font-size: 1.5rem;
+	}
+
+	&__logo-handler {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin-top: -170px;
+	}
+
+	&__logo {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+
+		&--grey {
+			filter: invert(18%) sepia(0%) saturate(1790%) hue-rotate(216deg)
+				brightness(100%) contrast(94%);
+		}
+
+		&--pink,
+		&--blue {
+			mask-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0),
+				rgba(0, 0, 0, 1)
+			);
+			animation: logo-fade 1s linear infinite;
+			opacity: 0;
+		}
+
+		&--pink {
+			filter: invert(30%) sepia(77%) saturate(4975%) hue-rotate(311deg)
+				brightness(98%) contrast(89%);
+		}
+
+		&--blue {
+			filter: invert(57%) sepia(24%) saturate(1184%) hue-rotate(175deg)
+				brightness(88%) contrast(86%);
+			animation-delay: 0.3s;
+		}
+	}
+
+	&__spinner {
+		width: 200px;
+		height: 200px;
+		border-radius: 100px;
+		border: 4px solid rgba(255, 255, 255, 0.2);
+		mask: linear-gradient(rgba(0, 0, 0, 0.1), #000 90%);
+		transform: perspective(200px) rotateX(70deg);
+	}
+
+	&__spinner:before,
+	&__spinner:after {
+		content: '';
+		position: absolute;
+		margin: -4px;
+		width: inherit;
+		height: inherit;
+		border-radius: inherit;
+		opacity: 0;
+		border: inherit;
+		border-color: transparent;
+		animation: spinner-spin 1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite,
+			spinner-fade 1s linear infinite;
+	}
+
+	&__spinner:before {
+		border-top-color: #ec2b96;
+	}
+
+	&__spinner:after {
+		border-top-color: #538cd3;
+		animation-delay: 0.3s;
+	}
+}
+
+@keyframes logo-fade {
+	20% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+}
+
+@keyframes spinner-spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner-fade {
+	20% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+}
