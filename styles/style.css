@@ -140,7 +140,7 @@ footer {
 }
 
 .preloader {
-  background: #000;
+  background: #fff;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -173,7 +173,7 @@ footer {
 }
 
 .preloader__sorry {
-  color: #303030;
+  color: #ccc;
   position: absolute;
   bottom: 20px;
   margin: 0 auto;
@@ -194,8 +194,8 @@ footer {
 }
 
 .preloader__logo--grey {
-  -webkit-filter: invert(18%) sepia(0%) saturate(1790%) hue-rotate(216deg) brightness(100%) contrast(94%);
-          filter: invert(18%) sepia(0%) saturate(1790%) hue-rotate(216deg) brightness(100%) contrast(94%);
+  -webkit-filter: invert(95%) sepia(56%) saturate(0%) hue-rotate(276deg) brightness(88%) contrast(79%);
+          filter: invert(95%) sepia(56%) saturate(0%) hue-rotate(276deg) brightness(88%) contrast(79%);
 }
 
 .preloader__logo--pink, .preloader__logo--blue {
@@ -224,7 +224,7 @@ footer {
   width: 200px;
   height: 200px;
   border-radius: 100px;
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  border: 4px solid rgba(0, 0, 0, 0.2);
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), color-stop(90%, #000));
   -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000 90%);
           mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), color-stop(90%, #000));

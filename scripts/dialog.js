@@ -11,7 +11,6 @@ function handleForm() {
 		let answer = getAnswer(input.value);
 		messanger.innerHTML += `<div class="dialog__message answer">${answer}</div>`;
 		messanger.scrollTop = 99999;
-		//speechSynthesis.speak(new SpeechSynthesisUtterance(answer));
 		messanger.innerHTML +=
 			"<audio src='https://distrib.belstu.by/yandex-tts-bridge/?text=" +
 			answer +
@@ -41,8 +40,9 @@ function buttonClick() {
 	let recognizer = new webkitSpeechRecognition();
 	recognizer.interimResults = true;
 	recognizer.lang = 'ru-Ru';
+	recognizer.on;
 	recognizer.onresult = function (event) {
-		var result = event.results[event.resultIndex];
+		let result = event.results[event.resultIndex];
 		if (result.isFinal) {
 			input.value = result[0].transcript;
 			button.classList.remove('dialog__button-listen');
@@ -50,6 +50,9 @@ function buttonClick() {
 		} else {
 			input.value = result[0].transcript;
 		}
+	};
+	recognizer.onaudioend = function (event) {
+		button.classList.remove('dialog__button-listen');
 	};
 	recognizer.start();
 }
