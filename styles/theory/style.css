@@ -109,7 +109,7 @@ footer {
 }
 
 ::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {

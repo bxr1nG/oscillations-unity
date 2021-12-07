@@ -8,7 +8,25 @@
 		<link rel="icon" href="images/logo.png" />
 		<title>Структура установки</title>
 	</head>
-	<body onload="init();">
+	<body class="noscroll">
+		<div class="preloader">
+			<div class="preloader__spinner"></div>
+			<div class="preloader__logo-handler">
+				<img
+					class="preloader__logo preloader__logo--grey"
+					src="images/vda.svg"
+				/>
+				<img
+					class="preloader__logo preloader__logo--blue"
+					src="images/vda.svg"
+				/>
+				<img
+					class="preloader__logo preloader__logo--pink"
+					src="images/vda.svg"
+				/>
+			</div>
+			<p class="preloader__sorry">This preloader is too good</p>
+		</div>
 		<div class="wrapper">
 			<header class="header">
 				<div class="header__logo">
@@ -140,9 +158,10 @@
 			</footer>
 		</div>
 
-		<!--<script src="scripts/preloader.js"></script>-->
 		<script src="scripts/structure.js"></script>
 		<script src="scripts/animate/createjs.min.js"></script>
 		<script src="scripts/animate/script.js"></script>
+		<script src="scripts/preloader.js"></script>
+		<script src="scripts/init.js"></script>
 	</body>
 </html>
