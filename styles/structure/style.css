@@ -34,6 +34,16 @@ input:focus {
   outline: none;
 }
 
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+}
+
 html {
   font-size: 62.5%;
 }

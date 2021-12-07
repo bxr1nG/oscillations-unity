@@ -1,5 +1,5 @@
 .dialog {
-	margin: 30px 0;
+	margin: 20px 0;
 	&__window {
 		border-radius: 30px;
 		overflow: hidden;
@@ -19,6 +19,10 @@
 		word-wrap: break-word;
 		scroll-behavior: smooth;
 	}
+	&__submit {
+		display: flex;
+		flex-direction: row;
+	}
 	&__input {
 		width: 100%;
 		padding: 15px 25px;
@@ -26,6 +30,25 @@
 		&::placeholder {
 			color: #fff;
 		}
+	}
+	&__button {
+		padding: 0 30px;
+		background-color: $mainColor;
+		color: #fff;
+		font-size: 2rem;
+		transition: all 0.3s;
+	}
+	&__button-hover {
+		padding: 0 40px;
+		background-color: lighten($color: $mainColor, $amount: 40);
+		color: $mainColor;
+		font-size: 2.5rem;
+	}
+	&__button-listen {
+		padding: 0 40px !important;
+		background-color: lighten($color: $red, $amount: 30) !important;
+		color: $red !important;
+		font-size: 2.5rem !important;
 	}
 	&__message {
 		margin: 5px;

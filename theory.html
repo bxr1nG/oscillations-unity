@@ -5,6 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles/theory/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		/>
 		<link rel="icon" href="images/logo.png" />
 		<title>Теория</title>
 	</head>
@@ -395,16 +399,23 @@
 			<section class="dialog">
 				<div class="dialog__window">
 					<h4 class="dialog__header">База знаний</h4>
-					<div class="dialog__body" id="messanger"></div>
-					<form class="dialog__submit" id="form" onsubmit="return false">
+					<div class="dialog__body" id="dialog__messanger"></div>
+					<form
+						class="dialog__submit"
+						id="dialog__form"
+						onsubmit="return false"
+					>
 						<input
 							class="dialog__input"
-							id="input"
+							id="dialog__input"
 							type="text"
 							name="question"
 							autocomplete="off"
 							placeholder="Введите ваш вопрос"
 						/>
+						<button class="dialog__button" id="dialog__button" type="button">
+							<i class="fas fa-microphone"></i>
+						</button>
 					</form>
 				</div>
 			</section>
