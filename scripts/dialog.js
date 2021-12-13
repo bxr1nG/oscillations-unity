@@ -8,16 +8,22 @@ form.addEventListener('submit', handleForm);
 function handleForm() {
 	if (input.value != '') {
 		messanger.innerHTML += `<div class="dialog__message question">${input.value}</div>`;
-		let answer = getAnswer(input.value);
+		let [answer, photo] = getAnswer(input.value);
 		messanger.innerHTML += `<div class="dialog__message answer">${answer}</div>`;
+		photo.forEach(element => {
+			messanger.innerHTML += element;
+		});
 		messanger.scrollTop = 99999;
-		messanger.innerHTML +=
+
+		speechSynthesis.speak(new SpeechSynthesisUtterance(answer)); // new audio
+		// old audio
+		/*messanger.innerHTML +=
 			"<audio src='https://distrib.belstu.by/yandex-tts-bridge/?text=" +
 			answer +
 			"'></audio>";
 		if (messanger.lastChild.tagName == 'AUDIO') {
 			messanger.lastChild.play();
-		}
+		}*/
 	}
 	input.value = '';
 }
@@ -68,7 +74,6 @@ let knowledge = [
 		'Работает',
 		"<p>таким образом: <p> <video src='Comp1_2_1.mp4' width='200' controls></video>",
 	],
-
 	[
 		'скорость',
 		'- это',
@@ -295,6 +300,21 @@ let knowledge = [
 	],
 ];
 
+knowledge = [
+	[
+		'осциллограф',
+		' - это ',
+		'прибор, предназначенный для исследования амплитудных и временных параметров электрического сигнала, подаваемого на его вход, и наглядно отображаемого непосредственно на экране либо регистрируемого на фотоленту',
+		'<img class="dialog__image" src="images/slider/slider-3.jpg"/>',
+	],
+	[
+		'установка лабораторной работы',
+		'Работает',
+		'таким образом:',
+		'<video class="dialog__image" src="video/simulator.mp4" controls></video>',
+	],
+];
+
 // псевдоокончания сказуемых (глаголов, кратких причастий и прилагательных )
 let endings = [
 	['ет', '(ет|ут|ют)'],
@@ -361,7 +381,9 @@ function getAnswer(question) {
 	// флаг, найден ли ответ
 	let result = false;
 	// формируемый функцией ответ на вопрос
-	let answer = '';
+	let answer = [];
+	answer[0] = '';
+	answer[1] = new Array([]);
 	// перебор слов
 	for (let i = 0; i < words.length; i++) {
 		// поиск номера псевдоокончания
@@ -383,14 +405,15 @@ function getAnswer(question) {
 				) {
 					// совпадение подлежащего
 					// создание простого предложения из семантической связи
-					answer += big1(
+					answer[0] += big1(
 						knowledge[j][0] +
 							' ' +
 							knowledge[j][1] +
 							' ' +
 							knowledge[j][2] +
-							'. '
+							'.<br/>'
 					);
+					if (knowledge[j][3]) answer[1].push(knowledge[j][3]);
 					result = true;
 				}
 			if (result == false) {
@@ -426,14 +449,15 @@ function getAnswer(question) {
 							(subject.test(knowledge[j][0]) || subject.test(knowledge[j][2]))
 						) {
 							// создание простого предложения из семантической связи
-							answer += big1(
+							answer[0] += big1(
 								knowledge[j][0] +
 									' ' +
 									knowledge[j][1] +
 									' ' +
 									knowledge[j][2] +
-									'. '
+									'.<br/>'
 							);
+							if (knowledge[j][3]) answer[1].push(knowledge[j][3]);
 							result = true;
 						}
 					}
@@ -446,14 +470,15 @@ function getAnswer(question) {
 								subject.test(knowledge[j][2])
 							) {
 								// создание простого предложения из семантической связи
-								answer += big1(
+								answer[0] += big1(
 									knowledge[j][0] +
 										' ' +
 										knowledge[j][1] +
 										' ' +
 										knowledge[j][2] +
-										'. '
+										'.<br/>'
 								);
+								if (knowledge[j][3]) answer[1].push(knowledge[j][3]);
 								result = true;
 							}
 						}
@@ -462,6 +487,6 @@ function getAnswer(question) {
 			}
 		}
 	}
-	if (!result) answer = 'Ответ не найден';
+	if (!result) answer[0] = 'Ответ не найден';
 	return answer;
 }
