@@ -28,6 +28,12 @@ function handleForm() {
 	input.value = '';
 }
 
+input.addEventListener('click', inputClick, false);
+
+function inputClick() {
+	speechSynthesis.pause();
+}
+
 button.addEventListener('mouseover', buttonOver, false);
 button.addEventListener('mouseout', buttonOut, false);
 button.addEventListener('click', buttonClick, false);
@@ -42,6 +48,8 @@ function buttonOut() {
 
 function buttonClick() {
 	button.classList.add('dialog__button-listen');
+
+	speechSynthesis.pause();
 
 	let recognizer = new webkitSpeechRecognition();
 	recognizer.interimResults = true;

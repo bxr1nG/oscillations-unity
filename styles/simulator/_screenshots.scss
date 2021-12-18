@@ -1,0 +1,14 @@
+.screenshots {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__title {
+		margin-top: 40px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	&__image {
+		width: 100%;
+		margin: 5px 0;
+	}
+}
