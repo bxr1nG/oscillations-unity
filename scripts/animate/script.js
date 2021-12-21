@@ -337,11 +337,11 @@
 		color: '#FFFFFF',
 		opacity: 1.0,
 		manifest: [
-			{ src: 'images/installation.png?1639857579112', id: 'installation' },
-			{ src: 'audio/cassette.mp3?1639857579112', id: 'cassette' },
-			{ src: 'audio/generator.mp3?1639857579112', id: 'generator' },
-			{ src: 'audio/oscilloscope.mp3?1639857579112', id: 'oscilloscope' },
-			{ src: 'audio/resistance.mp3?1639857579112', id: 'resistance' },
+			{ src: 'images/installation.png', id: 'installation' },
+			{ src: 'audio/cassette.mp3', id: 'cassette' },
+			{ src: 'audio/generator.mp3', id: 'generator' },
+			{ src: 'audio/oscilloscope.mp3', id: 'oscilloscope' },
+			{ src: 'audio/resistance.mp3', id: 'resistance' },
 		],
 		preloads: [],
 	};
@@ -554,7 +554,7 @@ function handleComplete(evt, comp) {
 		createjs.Ticker.addEventListener('tick', stage);
 	};
 	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(false, 'both', false, 1, [
+	AdobeAn.makeResponsive(true, 'both', false, 1, [
 		canvas,
 		anim_container,
 		dom_overlay_container,
