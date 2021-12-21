@@ -12,7 +12,7 @@
 		color: #fff;
 	}
 	&__body {
-		height: 400px;
+		height: 450px;
 		display: flex;
 		flex-direction: column;
 		overflow: auto;
@@ -56,6 +56,7 @@
 		border-radius: 20px;
 		max-width: 60%;
 		text-align: justify;
+		box-shadow: 4px 4px 8px 0px lighten($color: $mainColor, $amount: 40);
 		&.question {
 			margin-left: auto;
 			border-top-right-radius: 0;
@@ -72,7 +73,13 @@
 		margin: 5px;
 		margin-right: auto;
 		border-radius: 20px;
+		box-shadow: 4px 4px 8px 0px lighten($color: $mainColor, $amount: 40);
 		border-top-left-radius: 0;
-		width: 80%;
+		width: 50%;
+	}
+	@media (max-width: 767.98px) {
+		&__image {
+			width: 80%;
+		}
 	}
 }
